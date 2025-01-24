@@ -1,0 +1,9 @@
+{% extends "nav.html" %}
+{% block content %}
+    <h1>Create Post</h1>
+    <form action="/CreatePost/" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button>Submit</button>
+    </form>
+{% endblock %}

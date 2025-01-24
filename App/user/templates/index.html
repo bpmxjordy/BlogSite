@@ -1,2 +1,5 @@
 {% extends 'Nav.html' %}
-<h1>Welcome {{form}}!</h1>
+
+{% block content %}
+<h1>Welcome {{user.username}}!</h1>
+{% endblock %}
