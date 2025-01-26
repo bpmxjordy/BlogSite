@@ -4,6 +4,7 @@
     <form action="/CreatePost/" method="POST">
         {% csrf_token %}
         {{form}}
+        <p>{{username}}</p>
         <button>Submit</button>
     </form>
 {% endblock %}

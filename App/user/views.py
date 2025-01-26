@@ -50,10 +50,10 @@ def createPost(request):
         if request.method == "POST":
             form = postForm(request.POST)
             if form.is_valid():
-                form.user = request.user.username
-                print(form.user)
-                form.save()
-                print(form)
+                newPost = form.save(commit=False)
+                newPost.author = request.user
+                newPost.authorName = request.user.username
+                newPost.save()
             redirect("/posts/")
         form = postForm()
         return render(request, "createPost.html", {"form": form})
