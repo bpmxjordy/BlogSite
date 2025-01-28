@@ -62,6 +62,7 @@ def createPost(request):
 
 def posts(request):
     if request.user.is_authenticated:
+        print("Nice")
         return render(request, "posts.html", {"posts":post.objects.all().values()})
     return redirect("/login/")
     
